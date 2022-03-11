@@ -7,6 +7,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -25,6 +26,9 @@ public class Fattura {
 	private Date data;
 	private BigDecimal importo;
 	private Integer numero;
+	private String statoFattura;
+	@ManyToOne
+	private Cliente cliente;
 	
 
 }
