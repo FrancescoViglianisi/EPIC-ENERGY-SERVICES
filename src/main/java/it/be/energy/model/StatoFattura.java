@@ -1,13 +1,9 @@
 package it.be.energy.model;
 
-import java.math.BigDecimal;
-import java.util.Date;
-
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.ManyToOne;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -15,21 +11,13 @@ import lombok.NoArgsConstructor;
 
 @Data
 @Entity
-@NoArgsConstructor
 @AllArgsConstructor
-public class Fattura {
+@NoArgsConstructor
+public class StatoFattura {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long nFattura;
-	private Integer anno;
-	private Date data;
-	private BigDecimal importo;
-	private Integer numero;
-	@ManyToOne
-	private StatoFattura statoFattura;
-	@ManyToOne
-	private Cliente cliente;
+	private Long id;
+	private String nome;
 	
-
 }
