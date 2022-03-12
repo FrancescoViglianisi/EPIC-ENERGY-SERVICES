@@ -22,10 +22,14 @@ public class Comune {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
-	private Long codiceComune;
 	private String nome;
 	@ManyToOne
 	private Provincia provincia;
 	@OneToMany(mappedBy = "comune")
 	private List<Indirizzo> indirizzi;
+	
+	public Comune(String nome , Provincia provincia) { 
+		this.nome = nome;
+		this.provincia = provincia;
+	}
 }

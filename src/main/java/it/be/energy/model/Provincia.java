@@ -2,7 +2,10 @@ package it.be.energy.model;
 
 import java.util.Set;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 
@@ -15,11 +18,22 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class Provincia {
-	
+
 	@Id
-	private Long codiceProvincia; 
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Long id;
+	@Column(unique = true)
+	private Long codProvincia;
+	@Column(unique = true)
 	private String sigla;
 	private String nome;
 	@OneToMany(mappedBy = "provincia")
 	private Set<Comune> comuni;
+	private String regione;
+
+	public Provincia(String sigla, String nome, String regione) {
+		this.sigla = sigla;
+		this.nome = nome;
+		this.regione = regione;
+	}
 }
