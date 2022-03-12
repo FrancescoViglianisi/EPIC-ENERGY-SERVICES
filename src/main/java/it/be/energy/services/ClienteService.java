@@ -69,20 +69,20 @@ public class ClienteService {
 
 	}
 
-	public Page<Cliente> getClientiOrderByName(Pageable pageable) {
-		return clienteRepository.getAllOrderByRagioneSocialeAsc(pageable);
+	public Page<Cliente> getByOrderByClientiOrderByName(Pageable pageable) {
+		return clienteRepository.findByOrderByRagioneSocialeAsc(pageable);
 	}
 	
-	public Page<Cliente> getAllOrderByFatturatoAnnuale(Pageable pageable) {
-		return clienteRepository.getAllOrderByFatturatoAnnualeDesc(pageable);
+	public Page<Cliente> getByOrderByFatturatoAnnuale(Pageable pageable) {
+		return clienteRepository.findByOrderByFatturatoAnnualeDesc(pageable);
 	}
 	
-	public Page<Cliente> getAllOrderByDataInserimento(Pageable pageable) {
-		return clienteRepository.getAllOrderByDataInserimento(pageable);
+	public Page<Cliente> getByOrderByDataInserimento(Pageable pageable) {
+		return clienteRepository.findByOrderByDataInserimento(pageable);
 	}
 	
-	public Page<Cliente> getAllOrderByDataUltimoContatto(Pageable pageable) {
-		return clienteRepository.getAllOrderByDataUltimoContatto(pageable);
+	public Page<Cliente> getByOrderByDataUltimoContatto(Pageable pageable) {
+		return clienteRepository.findByOrderByDataUltimoContatto(pageable);
 		
 	}
 }
