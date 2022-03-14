@@ -12,7 +12,6 @@ import org.springframework.web.bind.annotation.PathVariable;
 import io.swagger.v3.oas.annotations.Operation;
 import it.be.energy.model.Comune;
 import it.be.energy.services.ComuneService;
-
 public class ComuneController {
 
 	@Autowired

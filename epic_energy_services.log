@@ -10336,4 +10336,136 @@ Caused by: java.lang.Error: Unresolved compilation problems:
 ""2022-03-14 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
 ""2022-03-14 [restartedMain] INFO  i.b.e.EpicEnergyServiceApplication - Started EpicEnergyServiceApplication in 1.323 seconds (JVM running for 2100.674)
 ""2022-03-14 [restartedMain] INFO  o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged
+""2022-03-14 [Thread-74] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+""2022-03-14 [Thread-74] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-19 - Shutdown initiated...
+""2022-03-14 [Thread-74] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-19 - Shutdown completed.
+""2022-03-14 [restartedMain] INFO  i.b.e.EpicEnergyServiceApplication - Starting EpicEnergyServiceApplication using Java 11.0.13 on LAPTOP-KFKGCED5 with PID 66540 (C:\Users\Lenovo\eclipse-workspace\EpicEnergyService\target\classes started by Lenovo in C:\Users\Lenovo\eclipse-workspace\EpicEnergyService)
+""2022-03-14 [restartedMain] INFO  i.b.e.EpicEnergyServiceApplication - No active profile set, falling back to 1 default profile: "default"
+""2022-03-14 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+""2022-03-14 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 25 ms. Found 8 JPA repository interfaces.
+""2022-03-14 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+""2022-03-14 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+""2022-03-14 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.58]
+""2022-03-14 [restartedMain] INFO  o.a.c.c.C.[Tomcat-1].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+""2022-03-14 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 319 ms
+""2022-03-14 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+""2022-03-14 [restartedMain] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+""2022-03-14 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-20 - Starting...
+""2022-03-14 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-20 - Start completed.
+""2022-03-14 [restartedMain] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+""2022-03-14 [restartedMain] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+""2022-03-14 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+""2022-03-14 [restartedMain] INFO  o.s.s.web.DefaultSecurityFilterChain - Will not secure any request
+""2022-03-14 [restartedMain] WARN  o.s.b.a.t.ThymeleafAutoConfiguration$DefaultTemplateResolverConfiguration - Cannot find template location: classpath:/templates/ (please add some templates or check your Thymeleaf configuration)
+""2022-03-14 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+""2022-03-14 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+""2022-03-14 [restartedMain] INFO  i.b.e.EpicEnergyServiceApplication - Started EpicEnergyServiceApplication in 1.43 seconds (JVM running for 2295.294)
+""2022-03-14 [http-nio-8080-exec-1] INFO  o.a.c.c.C.[Tomcat-1].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+""2022-03-14 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+""2022-03-14 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+""2022-03-14 [http-nio-8080-exec-6] INFO  o.s.api.AbstractOpenApiResource - Init duration for springdoc-openapi is: 960 ms
+""2022-03-14 [restartedMain] INFO  o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged
+""2022-03-14 [Thread-78] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+""2022-03-14 [Thread-78] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-20 - Shutdown initiated...
+""2022-03-14 [Thread-78] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-20 - Shutdown completed.
+""2022-03-14 [restartedMain] INFO  i.b.e.EpicEnergyServiceApplication - Starting EpicEnergyServiceApplication using Java 11.0.13 on LAPTOP-KFKGCED5 with PID 66540 (C:\Users\Lenovo\eclipse-workspace\EpicEnergyService\target\classes started by Lenovo in C:\Users\Lenovo\eclipse-workspace\EpicEnergyService)
+""2022-03-14 [restartedMain] INFO  i.b.e.EpicEnergyServiceApplication - No active profile set, falling back to 1 default profile: "default"
+""2022-03-14 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+""2022-03-14 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 38 ms. Found 8 JPA repository interfaces.
+""2022-03-14 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+""2022-03-14 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+""2022-03-14 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.58]
+""2022-03-14 [restartedMain] INFO  o.a.c.c.C.[Tomcat-1].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+""2022-03-14 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 471 ms
+""2022-03-14 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+""2022-03-14 [restartedMain] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+""2022-03-14 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-21 - Starting...
+""2022-03-14 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-21 - Start completed.
+""2022-03-14 [restartedMain] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+""2022-03-14 [restartedMain] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+""2022-03-14 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+""2022-03-14 [restartedMain] INFO  o.s.s.web.DefaultSecurityFilterChain - Will not secure any request
+""2022-03-14 [restartedMain] WARN  o.s.b.a.t.ThymeleafAutoConfiguration$DefaultTemplateResolverConfiguration - Cannot find template location: classpath:/templates/ (please add some templates or check your Thymeleaf configuration)
+""2022-03-14 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+""2022-03-14 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+""2022-03-14 [restartedMain] INFO  i.b.e.EpicEnergyServiceApplication - Started EpicEnergyServiceApplication in 1.721 seconds (JVM running for 2329.367)
+""2022-03-14 [restartedMain] INFO  o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged
+""2022-03-14 [http-nio-8080-exec-1] INFO  o.a.c.c.C.[Tomcat-1].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+""2022-03-14 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+""2022-03-14 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+""2022-03-14 [http-nio-8080-exec-7] INFO  o.s.api.AbstractOpenApiResource - Init duration for springdoc-openapi is: 414 ms
+""2022-03-14 [Thread-82] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+""2022-03-14 [Thread-82] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-21 - Shutdown initiated...
+""2022-03-14 [Thread-82] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-21 - Shutdown completed.
+""2022-03-14 [restartedMain] INFO  i.b.e.EpicEnergyServiceApplication - Starting EpicEnergyServiceApplication using Java 11.0.13 on LAPTOP-KFKGCED5 with PID 66540 (C:\Users\Lenovo\eclipse-workspace\EpicEnergyService\target\classes started by Lenovo in C:\Users\Lenovo\eclipse-workspace\EpicEnergyService)
+""2022-03-14 [restartedMain] INFO  i.b.e.EpicEnergyServiceApplication - No active profile set, falling back to 1 default profile: "default"
+""2022-03-14 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+""2022-03-14 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 29 ms. Found 8 JPA repository interfaces.
+""2022-03-14 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+""2022-03-14 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+""2022-03-14 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.58]
+""2022-03-14 [restartedMain] INFO  o.a.c.c.C.[Tomcat-1].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+""2022-03-14 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 304 ms
+""2022-03-14 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+""2022-03-14 [restartedMain] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+""2022-03-14 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-22 - Starting...
+""2022-03-14 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-22 - Start completed.
+""2022-03-14 [restartedMain] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+""2022-03-14 [restartedMain] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+""2022-03-14 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+""2022-03-14 [restartedMain] INFO  o.s.s.web.DefaultSecurityFilterChain - Will not secure any request
+""2022-03-14 [restartedMain] WARN  o.s.b.a.t.ThymeleafAutoConfiguration$DefaultTemplateResolverConfiguration - Cannot find template location: classpath:/templates/ (please add some templates or check your Thymeleaf configuration)
+""2022-03-14 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+""2022-03-14 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+""2022-03-14 [restartedMain] INFO  i.b.e.EpicEnergyServiceApplication - Started EpicEnergyServiceApplication in 1.274 seconds (JVM running for 2377.349)
+""2022-03-14 [restartedMain] INFO  o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged
+""2022-03-14 [Thread-86] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+""2022-03-14 [Thread-86] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-22 - Shutdown initiated...
+""2022-03-14 [Thread-86] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-22 - Shutdown completed.
+""2022-03-14 [restartedMain] INFO  i.b.e.EpicEnergyServiceApplication - Starting EpicEnergyServiceApplication using Java 11.0.13 on LAPTOP-KFKGCED5 with PID 66540 (C:\Users\Lenovo\eclipse-workspace\EpicEnergyService\target\classes started by Lenovo in C:\Users\Lenovo\eclipse-workspace\EpicEnergyService)
+""2022-03-14 [restartedMain] INFO  i.b.e.EpicEnergyServiceApplication - No active profile set, falling back to 1 default profile: "default"
+""2022-03-14 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+""2022-03-14 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 25 ms. Found 8 JPA repository interfaces.
+""2022-03-14 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+""2022-03-14 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+""2022-03-14 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.58]
+""2022-03-14 [restartedMain] INFO  o.a.c.c.C.[Tomcat-1].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+""2022-03-14 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 330 ms
+""2022-03-14 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+""2022-03-14 [restartedMain] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+""2022-03-14 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-23 - Starting...
+""2022-03-14 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-23 - Start completed.
+""2022-03-14 [restartedMain] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+""2022-03-14 [restartedMain] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+""2022-03-14 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+""2022-03-14 [restartedMain] INFO  o.s.s.web.DefaultSecurityFilterChain - Will not secure any request
+""2022-03-14 [restartedMain] WARN  o.s.b.a.t.ThymeleafAutoConfiguration$DefaultTemplateResolverConfiguration - Cannot find template location: classpath:/templates/ (please add some templates or check your Thymeleaf configuration)
+""2022-03-14 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+""2022-03-14 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+""2022-03-14 [restartedMain] INFO  i.b.e.EpicEnergyServiceApplication - Started EpicEnergyServiceApplication in 1.302 seconds (JVM running for 2384.376)
+""2022-03-14 [restartedMain] INFO  o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged
+""2022-03-14 [Thread-90] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+""2022-03-14 [Thread-90] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-23 - Shutdown initiated...
+""2022-03-14 [Thread-90] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-23 - Shutdown completed.
+""2022-03-14 [restartedMain] INFO  i.b.e.EpicEnergyServiceApplication - Starting EpicEnergyServiceApplication using Java 11.0.13 on LAPTOP-KFKGCED5 with PID 66540 (C:\Users\Lenovo\eclipse-workspace\EpicEnergyService\target\classes started by Lenovo in C:\Users\Lenovo\eclipse-workspace\EpicEnergyService)
+""2022-03-14 [restartedMain] INFO  i.b.e.EpicEnergyServiceApplication - No active profile set, falling back to 1 default profile: "default"
+""2022-03-14 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+""2022-03-14 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 23 ms. Found 8 JPA repository interfaces.
+""2022-03-14 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+""2022-03-14 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+""2022-03-14 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.58]
+""2022-03-14 [restartedMain] INFO  o.a.c.c.C.[Tomcat-1].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+""2022-03-14 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 315 ms
+""2022-03-14 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+""2022-03-14 [restartedMain] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+""2022-03-14 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-25 - Starting...
+""2022-03-14 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-25 - Start completed.
+""2022-03-14 [restartedMain] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+""2022-03-14 [restartedMain] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+""2022-03-14 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+""2022-03-14 [restartedMain] INFO  o.s.s.web.DefaultSecurityFilterChain - Will not secure any request
+""2022-03-14 [restartedMain] WARN  o.s.b.a.t.ThymeleafAutoConfiguration$DefaultTemplateResolverConfiguration - Cannot find template location: classpath:/templates/ (please add some templates or check your Thymeleaf configuration)
+""2022-03-14 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+""2022-03-14 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+""2022-03-14 [restartedMain] INFO  i.b.e.EpicEnergyServiceApplication - Started EpicEnergyServiceApplication in 1.275 seconds (JVM running for 3800.8)
 "
