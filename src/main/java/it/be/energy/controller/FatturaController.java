@@ -1,5 +1,8 @@
 package it.be.energy.controller;
 
+import java.math.BigDecimal;
+import java.util.Date;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -17,6 +20,7 @@ import org.springframework.web.bind.annotation.RestController;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.parameters.RequestBody;
 import it.be.energy.model.Fattura;
+import it.be.energy.model.StatoFattura;
 import it.be.energy.services.FatturaService;
 
 @RestController
@@ -37,14 +41,14 @@ public class FatturaController {
 	}
 	
 	@PreAuthorize("hasAnyRole('ROLE_ADMIN', 'ROLE_USER')")
-	@GetMapping
+	@GetMapping("/find/{id}")
 	@Operation
 	public ResponseEntity<Fattura> findByid(@PathVariable Long id) {
 		return new ResponseEntity<>(fatturaService.findById(id) , HttpStatus.ACCEPTED);
 	}
 	
 	@PreAuthorize("hasAnyRole('ROLE_ADMIN', 'ROLE_USER')")
-	@GetMapping
+	@GetMapping("/getAll")
 	@Operation
 	public ResponseEntity<Page<Fattura>> getAll(Pageable pageable) {
 		Page<Fattura> clienti = fatturaService.findAll(pageable);
@@ -64,12 +68,72 @@ public class FatturaController {
 	}
 	
 	@PreAuthorize("hasAnyRole('ROLE_ADMIN', 'ROLE_USER')")
-	@GetMapping
+	@GetMapping("/delete")
 	@Operation
 	public String delete(@RequestParam Long id) {
 		fatturaService.delete(id);
 		return "Fattura eliminata correttamente";
 	}
 	
+	@PreAuthorize("hasAnyRole('ROLE_ADMIN', 'ROLE_USER')")
+	@GetMapping("/find")
+	@Operation
+	public ResponseEntity<Page<Fattura>> findByClienteRagioneSocialeLike(Pageable pageable, String nome) {
+		Page<Fattura> trovate = fatturaService.findByClienteRagioneSocialeLike(pageable, nome); 
+		if(trovate.hasContent()) {
+			return new ResponseEntity<>(trovate , HttpStatus.ACCEPTED);
+		}else {
+			return new ResponseEntity<>(trovate , HttpStatus.NOT_FOUND);
+		}
+	}
+	
+	@PreAuthorize("hasAnyRole('ROLE_ADMIN', 'ROLE_USER')")
+	@GetMapping("/stato")
+	@Operation
+	public ResponseEntity<Page<Fattura>> findByStato(Pageable pageable, StatoFattura stato) {
+		Page<Fattura> trovate = fatturaService.findByStato(pageable, stato); 
+		if(trovate.hasContent()) {
+			return new ResponseEntity<>(trovate , HttpStatus.ACCEPTED);
+		}else {
+			return new ResponseEntity<>(trovate , HttpStatus.NOT_FOUND);
+		}
+
+	}
+	@PreAuthorize("hasAnyRole('ROLE_ADMIN', 'ROLE_USER')")
+	@GetMapping("/data")
+	@Operation
+	public ResponseEntity<Page<Fattura>> findByData(Pageable pageable, Date data) {
+		Page<Fattura> trovate = fatturaService.findByData(pageable, data); 
+		if(trovate.hasContent()) {
+			return new ResponseEntity<>(trovate , HttpStatus.ACCEPTED);
+		}else {
+			return new ResponseEntity<>(trovate , HttpStatus.NOT_FOUND);
+		}
+
+	}
+	@PreAuthorize("hasAnyRole('ROLE_ADMIN', 'ROLE_USER')")
+	@GetMapping("/anno")
+	@Operation
+	public ResponseEntity<Page<Fattura>> findByAnno(Pageable pageable, Integer anno) {
+		Page<Fattura> trovate = fatturaService.findByAnno(pageable, anno); 
+		if(trovate.hasContent()) {
+			return new ResponseEntity<>(trovate , HttpStatus.ACCEPTED);
+		}else {
+			return new ResponseEntity<>(trovate , HttpStatus.NOT_FOUND);
+		}
+
+	}
+	
+	@PreAuthorize("hasAnyRole('ROLE_ADMIN', 'ROLE_USER')")
+	@GetMapping("/importo")
+	@Operation
+	public ResponseEntity<Page<Fattura>> findByImportoBetween(Pageable pageable, BigDecimal minimo, BigDecimal massimo) {
+		Page<Fattura> trovate = fatturaService.findByImportoBetween(pageable, minimo , massimo); 
+		if(trovate.hasContent()) {
+			return new ResponseEntity<>(trovate , HttpStatus.ACCEPTED);
+		}else {
+			return new ResponseEntity<>(trovate , HttpStatus.NOT_FOUND);
+		}
+	}
 
 }

@@ -35,14 +35,14 @@ public class IndirizzoController {
 	}
 	
 	@PreAuthorize("hasAnyRole('ROLE_ADMIN', 'ROLE_USER')")
-	@GetMapping
+	@GetMapping("/find/{id}")
 	@Operation
 	public ResponseEntity<Indirizzo> findByid(@PathVariable Long id) {
 		return new ResponseEntity<>(indirizzoService.findById(id) , HttpStatus.ACCEPTED);
 	}
 	
 	@PreAuthorize("hasAnyRole('ROLE_ADMIN', 'ROLE_USER')")
-	@GetMapping
+	@GetMapping("/getAll")
 	@Operation
 	public ResponseEntity<Page<Indirizzo>> getAll(Pageable pageable) {
 		Page<Indirizzo> indirizzi = indirizzoService.findAll(pageable);
@@ -62,7 +62,7 @@ public class IndirizzoController {
 	}
 	
 	@PreAuthorize("hasAnyRole('ROLE_ADMIN', 'ROLE_USER')")
-	@GetMapping
+	@GetMapping("/delete")
 	@Operation
 	public String delete(@RequestParam Long id) {
 		indirizzoService.delete(id);

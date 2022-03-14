@@ -16,11 +16,13 @@ public interface FatturaRepository extends JpaRepository<Fattura, Long> {
 	
 	public Page<Fattura> findByClienteRagioneSocialeLike(Pageable pageable , String nome);
 	
-	public Page<Fattura> findByStatofattura(Pageable pageable , StatoFattura statoFattura);
+	public Page<Fattura> findByStatoFattura(Pageable pageable , StatoFattura statoFattura);
 	
 	public Page <Fattura> findByData (Pageable pageable , Date data);
 	
-	public Page <Fattura> findByanno (Pageable pageable , Integer anno);
+	public Page <Fattura> findByAnno (Pageable pageable , Integer anno);
 	
 	public Page <Fattura> findByImportoBetween(Pageable pageable , BigDecimal minimo , BigDecimal massimo);
+	
+	
 }
