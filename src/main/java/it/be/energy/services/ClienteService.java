@@ -1,5 +1,7 @@
 package it.be.energy.services;
 
+import java.math.BigDecimal;
+import java.time.LocalDate;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,7 +28,7 @@ public class ClienteService {
 		clienteRepository.deleteById(id);
 	}
 
-	public Cliente update(Cliente cliente) {
+	public Cliente update(Cliente cliente ,Long id) {
 		Optional<Cliente> update = clienteRepository.findById(cliente.getId());
 		if (update.isPresent()) {
 			Cliente clienteUpdate = update.get();
@@ -59,7 +61,7 @@ public class ClienteService {
 		return clienteRepository.findAll(pageable);
 	}
 
-	public Cliente getById(Long id) {
+	public Cliente findById(Long id) {
 		Optional<Cliente> find = clienteRepository.findById(id);
 		if (find.isPresent()) {
 			return find.get();
@@ -70,23 +72,68 @@ public class ClienteService {
 	}
 
 	public Page<Cliente> findByOrderByClientiOrderByName(Pageable pageable) {
-		return clienteRepository.findByOrderByRagioneSocialeAsc(pageable);
+		return clienteRepository.findAllByOrderByRagioneSocialeAsc(pageable);
 	}
 	
-	public Page<Cliente> findByOrderByFatturatoAnnuale(Pageable pageable) {
-		return clienteRepository.findByOrderByFatturatoAnnualeDesc(pageable);
-	}
 	
 	public Page<Cliente> findByOrderByDataInserimento(Pageable pageable) {
-		return clienteRepository.findByOrderByDataInserimento(pageable);
+		return clienteRepository.findAllByOrderByDataInserimento(pageable);
 	}
 	
 	public Page<Cliente> findByOrderByDataUltimoContatto(Pageable pageable) {
-		return clienteRepository.findByOrderByDataUltimoContatto(pageable);
+		return clienteRepository.findAllByOrderByDataUltimoContatto(pageable);
 		
 	}
 	
 	public Page<Cliente> findByOrderBySedeLegaleComuneProvincia(Pageable pageable) {
-		return clienteRepository.findByOrderBySedeLegaleComuneProvincia(pageable);
+		return clienteRepository.findAllByOrderBySedeLegaleComuneProvincia(pageable);
 	}
+	
+	 public Page<Cliente> findByFatturatoAnnualeGreaterThanEqual(Pageable pageable, BigDecimal fatturatoAnnuale) {
+		 return clienteRepository.findByFatturatoAnnualeGreaterThanEqual(pageable, fatturatoAnnuale);
+	 }
+	 
+	 public Page<Cliente> findByFatturatoAnnualeLessThanEqual(Pageable pageable, BigDecimal fatturatoAnnuale) {
+		 return clienteRepository.findByFatturatoAnnualeLessThanEqual(pageable, fatturatoAnnuale);
+	 }
+	 
+	 public Page<Cliente> findByFatturatoAnnualeBetween(Pageable pageable, BigDecimal fatturatoMin, BigDecimal fatturatoMax) {
+		 return clienteRepository.findByFatturatoAnnualeBetween(pageable, fatturatoMin, fatturatoMax);
+	 }
+	 
+	 public Page<Cliente> findByDataInserimentoGreaterThanEqual(Pageable pageable, LocalDate dataInserimento) {
+		 return clienteRepository.findByDataInserimentoGreaterThanEqual(pageable, dataInserimento);
+	 }
+	 
+	 public Page<Cliente> findByDataInserimentoLessThanEqual(Pageable pageable, LocalDate dataInserimento) {
+		 return clienteRepository.findByDataInserimentoLessThanEqual(pageable, dataInserimento);
+	 }
+	 
+	 public Page<Cliente> findByDataInserimentoBetween(Pageable pageable, LocalDate dataMin, LocalDate dataMax) {
+		 return clienteRepository.findByDataInserimentoBetween(pageable, dataMin, dataMax);
+	 }
+
+	    public Page<Cliente> findByDataUltimoContattoGreaterThanEqual(Pageable pageable, LocalDate dataUltimoContatto) {
+	    	return clienteRepository.findByDataUltimoContattoGreaterThanEqual(pageable, dataUltimoContatto);
+	    }
+
+	    public Page<Cliente> findByDataUltimoContattoLessThanEqual(Pageable pageable, LocalDate dataUltimoContatto) {
+	    	return clienteRepository.findByDataUltimoContattoLessThanEqual(pageable, dataUltimoContatto);
+	    }
+
+	    public Page<Cliente> findByDataUltimoContattoBetween(Pageable pageable, LocalDate dataUltimoContattoMin, LocalDate dataUltimoContattoMax) {
+	    	return clienteRepository.findByDataUltimoContattoBetween(pageable, dataUltimoContattoMin, dataUltimoContattoMax);
+	    }
+
+	    public Page<Cliente> findByRagioneSocialeLike(Pageable pageable, String ragioneSociale) {
+	    	return clienteRepository.findByRagioneSocialeLike(pageable, ragioneSociale);
+	    }
+
+		public Page<Cliente> findAllByOrderByFatturatoAnnuale(Pageable pageable) {
+			return clienteRepository.findAllByOrderByFatturatoAnnuale(pageable);
+		}
+
+		public Page<Cliente> findAllByOrderByRagioneSocialeAsc(Pageable pageable) {
+			return clienteRepository.findAllByOrderByRagioneSocialeAsc(pageable);
+		}
 }

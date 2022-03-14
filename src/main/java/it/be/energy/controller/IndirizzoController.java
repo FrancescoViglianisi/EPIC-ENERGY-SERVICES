@@ -16,40 +16,38 @@ import org.springframework.web.bind.annotation.RestController;
 
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.parameters.RequestBody;
-import it.be.energy.model.Fattura;
-import it.be.energy.services.FatturaService;
-
+import it.be.energy.model.Indirizzo;
+import it.be.energy.services.IndirizzoService;
 @RestController
-@RequestMapping("/fattura")
-
-
-public class FatturaController {
+@RequestMapping("/indirizzo  ")
+public class IndirizzoController {
 	
 	@Autowired
-	FatturaService fatturaService;
+	IndirizzoService indirizzoService;
 	
+
 	@PreAuthorize("hasRole('ROLE_ADMIN')")
 	@PostMapping
 	@Operation
-	public String insert(@RequestBody Fattura fattura) {
-		fatturaService.insert(fattura);
-		return "Cliente inserito correttamente";
+	public String insert(@RequestBody Indirizzo indirizzo) {
+		indirizzoService.insert(indirizzo);
+		return "Indirizzo inserito correttamente";
 	}
 	
 	@PreAuthorize("hasAnyRole('ROLE_ADMIN', 'ROLE_USER')")
 	@GetMapping
 	@Operation
-	public ResponseEntity<Fattura> findByid(@PathVariable Long id) {
-		return new ResponseEntity<>(fatturaService.findById(id) , HttpStatus.ACCEPTED);
+	public ResponseEntity<Indirizzo> findByid(@PathVariable Long id) {
+		return new ResponseEntity<>(indirizzoService.findById(id) , HttpStatus.ACCEPTED);
 	}
 	
 	@PreAuthorize("hasAnyRole('ROLE_ADMIN', 'ROLE_USER')")
 	@GetMapping
 	@Operation
-	public ResponseEntity<Page<Fattura>> getAll(Pageable pageable) {
-		Page<Fattura> clienti = fatturaService.findAll(pageable);
-		if(clienti.hasContent()) {
-			return new ResponseEntity<>(clienti, HttpStatus.ACCEPTED);
+	public ResponseEntity<Page<Indirizzo>> getAll(Pageable pageable) {
+		Page<Indirizzo> indirizzi = indirizzoService.findAll(pageable);
+		if(indirizzi.hasContent()) {
+			return new ResponseEntity<>(indirizzi, HttpStatus.ACCEPTED);
 		}else {
 			return new ResponseEntity<>(null, HttpStatus.NOT_FOUND);
 		}
@@ -58,18 +56,17 @@ public class FatturaController {
 	@PreAuthorize("hasRole('ROLE_ADMIN')")
 	@PutMapping
 	@Operation
-	public String update(@RequestBody Fattura fattura , @PathVariable Long id) {
-		fatturaService.update(fattura, id);
-		return "Fattura aggiornata correttamente";
+	public String update(@RequestBody Indirizzo indirizzo , @PathVariable Long id) {
+		indirizzoService.update(indirizzo, id);
+		return "indirizzo aggiornato correttamente";
 	}
 	
 	@PreAuthorize("hasAnyRole('ROLE_ADMIN', 'ROLE_USER')")
 	@GetMapping
 	@Operation
 	public String delete(@RequestParam Long id) {
-		fatturaService.delete(id);
-		return "Fattura eliminata correttamente";
+		indirizzoService.delete(id);
+		return "indirizzo eliminato correttamente";
 	}
 	
-
 }
