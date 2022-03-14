@@ -125,8 +125,8 @@ public class ClienteService {
 	    	return clienteRepository.findByDataUltimoContattoBetween(pageable, dataUltimoContattoMin, dataUltimoContattoMax);
 	    }
 
-	    public Page<Cliente> findByRagioneSocialeLike(Pageable pageable, String ragioneSociale) {
-	    	return clienteRepository.findByRagioneSocialeLike(pageable, ragioneSociale);
+	    public Page<Cliente> findByRagioneSocialeContaining(Pageable pageable, String ragioneSociale) {
+	    	return clienteRepository.findByRagioneSocialeContaining(pageable, ragioneSociale);
 	    }
 
 		public Page<Cliente> findAllByOrderByFatturatoAnnuale(Pageable pageable) {

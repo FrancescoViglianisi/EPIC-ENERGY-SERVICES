@@ -309,9 +309,9 @@ public class ClienteController {
 	@PreAuthorize("hasAnyRole('ROLE_ADMIN', 'ROLE_USER')")
 	@GetMapping("/trovapernomelike/{ragioneSociale}")
 	@Operation(summary = "Cancella un cliente tramite il suo id", description = "")
-	public ResponseEntity<Page<Cliente>> trovaByRagioneSocialeLike(Pageable pageable,
+	public ResponseEntity<Page<Cliente>> trovaByRagioneSocialeContaining(Pageable pageable,
 			@PathVariable String ragioneSociale) {
-		Page<Cliente> trovati = clienteService.findByRagioneSocialeLike(pageable, ragioneSociale);
+		Page<Cliente> trovati = clienteService.findByRagioneSocialeContaining(pageable, ragioneSociale);
 		if (trovati.isEmpty()) {
 			return new ResponseEntity<>(trovati, HttpStatus.BAD_REQUEST);
 		} else {

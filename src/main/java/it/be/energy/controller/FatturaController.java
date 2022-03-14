@@ -78,8 +78,8 @@ public class FatturaController {
 	@PreAuthorize("hasAnyRole('ROLE_ADMIN', 'ROLE_USER')")
 	@GetMapping("/find")
 	@Operation
-	public ResponseEntity<Page<Fattura>> findByClienteRagioneSocialeLike(Pageable pageable, String nome) {
-		Page<Fattura> trovate = fatturaService.findByClienteRagioneSocialeLike(pageable, nome); 
+	public ResponseEntity<Page<Fattura>> findByClienteRagioneSocialeContaining(Pageable pageable, String nome) {
+		Page<Fattura> trovate = fatturaService.findByClienteRagioneSocialeContaining(pageable, nome); 
 		if(trovate.hasContent()) {
 			return new ResponseEntity<>(trovate , HttpStatus.ACCEPTED);
 		}else {

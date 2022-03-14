@@ -50,6 +50,7 @@ public class FatturaService {
 		Optional<Fattura> fatturadaAggiornare = fatturaRepository.findById(id);
 		if (fatturadaAggiornare.isPresent()) {
 			Fattura fatturaAggiornata = fatturadaAggiornare.get();
+			fatturaAggiornata.setNumeroFattura(fattura.getNumeroFattura());
 			fatturaAggiornata.setAnno(fattura.getAnno());
 			fatturaAggiornata.setCliente(fattura.getCliente());
 			fatturaAggiornata.setData(fattura.getData());
@@ -61,8 +62,8 @@ public class FatturaService {
 		}
 	}
 	
-	public Page<Fattura> findByClienteRagioneSocialeLike(Pageable pageable, String nome) {
-		return fatturaRepository.findByClienteRagioneSocialeLike(pageable, nome);
+	public Page<Fattura> findByClienteRagioneSocialeContaining(Pageable pageable, String nome) {
+		return fatturaRepository.findByClienteRagioneSocialeContaining(pageable, nome);
 	}
 
 	public Page<Fattura> findByStato(Pageable pageable, StatoFattura stato) {
