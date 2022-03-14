@@ -22,9 +22,11 @@ import io.swagger.v3.oas.annotations.parameters.RequestBody;
 import it.be.energy.model.Fattura;
 import it.be.energy.model.StatoFattura;
 import it.be.energy.services.FatturaService;
+import lombok.extern.slf4j.Slf4j;
 
 @RestController
 @RequestMapping("/fattura")
+@Slf4j
 
 
 public class FatturaController {

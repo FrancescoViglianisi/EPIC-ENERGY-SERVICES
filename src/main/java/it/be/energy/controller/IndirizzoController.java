@@ -18,8 +18,10 @@ import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.parameters.RequestBody;
 import it.be.energy.model.Indirizzo;
 import it.be.energy.services.IndirizzoService;
+import lombok.extern.slf4j.Slf4j;
 @RestController
-@RequestMapping("/indirizzo  ")
+@RequestMapping("/indirizzo")
+@Slf4j
 public class IndirizzoController {
 	
 	@Autowired

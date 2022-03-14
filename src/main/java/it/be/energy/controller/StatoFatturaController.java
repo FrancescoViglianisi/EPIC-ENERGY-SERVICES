@@ -11,6 +11,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.parameters.RequestBody;
@@ -18,7 +20,8 @@ import it.be.energy.exceptions.StatoFatturaException;
 import it.be.energy.model.StatoFattura;
 import it.be.energy.services.StatoFatturaService;
 import lombok.extern.slf4j.Slf4j;
-
+@RestController
+@RequestMapping("/stato_fattura")
 @Slf4j
 
 public class StatoFatturaController {

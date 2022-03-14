@@ -8,11 +8,16 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 import io.swagger.v3.oas.annotations.Operation;
 import it.be.energy.model.Provincia;
 import it.be.energy.services.ProvinciaService;
-
+import lombok.extern.slf4j.Slf4j;
+@RestController
+@RequestMapping("/provincia")
+@Slf4j
 public class ProvinciaController {
 
 	@Autowired
@@ -22,6 +27,7 @@ public class ProvinciaController {
 	@GetMapping("/find/{id}")
 	@Operation
 	public ResponseEntity<Provincia> findByid(@PathVariable Long id) {
+		
 		return new ResponseEntity<>(provinciaService.findById(id) , HttpStatus.ACCEPTED);
 	}
 	
