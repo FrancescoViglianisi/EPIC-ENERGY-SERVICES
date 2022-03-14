@@ -63,7 +63,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
         .csrf().disable()
         .authorizeRequests()
         .antMatchers("/auth/**").permitAll() // gli endpoint di autenticazione sono pubblicamente accessibili
-        .antMatchers("/api/**").authenticated() // le API richiedono l'autenticazione
+        .antMatchers("/cliente/**").authenticated() // le API richiedono l'autenticazione
         .and() 
         .exceptionHandling()
         .authenticationEntryPoint((req, res, ex) -> res.sendError(HttpServletResponse.SC_UNAUTHORIZED, "UNAUTHORIZED : " + ex.getMessage()))
