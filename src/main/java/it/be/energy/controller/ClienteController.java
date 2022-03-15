@@ -71,6 +71,8 @@ public class ClienteController {
 		return new ResponseEntity<>(c, HttpStatus.CREATED);
 
 	}
+	
+
 
 	@PreAuthorize("hasRole('ROLE_ADMIN')")
 	@PutMapping("/aggiorna")

@@ -20,8 +20,7 @@ public class ClienteService {
 	ClienteRepository clienteRepository;
 
 	public Cliente insertCliente(Cliente cliente) {
-		clienteRepository.save(cliente);
-		return cliente;
+		 return clienteRepository.save(cliente);
 	}
 
 	public void deleteClienteById(Long id) {

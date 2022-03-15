@@ -19,6 +19,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import io.swagger.v3.oas.annotations.Operation;
 import it.be.energy.exceptions.UserException;
 import it.be.energy.model.LoginRequest;
 import it.be.energy.model.LoginResponse;
@@ -31,11 +32,10 @@ import it.be.energy.repository.UserRepository;
 import it.be.energy.services.UserDetailsImpl;
 import it.be.energy.util.JwtUtils;
 
-
 @RestController
 @RequestMapping("/auth")
 public class AuthController {
-	
+
 	@Autowired
 	PasswordEncoder encoder;
 
@@ -50,67 +50,68 @@ public class AuthController {
 
 	@Autowired
 	JwtUtils jwtUtils;
-	
+
 	@PostMapping("/login")
+	@Operation(summary = "Autenticazione User", description = "")
 	public ResponseEntity<?> authenticateUser(@RequestBody LoginRequest loginRequest) {
-	Authentication authentication = authenticationManager.authenticate(
-			new UsernamePasswordAuthenticationToken(loginRequest.getUserName(), loginRequest.getPassword()));
-	SecurityContextHolder.getContext().setAuthentication(authentication);
-	String token = jwtUtils.generateJwtToken(authentication);
-	UserDetailsImpl userDetails = (UserDetailsImpl) authentication.getPrincipal();
-	List<String> roles = userDetails.getAuthorities().stream().map(item -> item.getAuthority())
-			.collect(Collectors.toList());
+		Authentication authentication = authenticationManager.authenticate(
+				new UsernamePasswordAuthenticationToken(loginRequest.getUserName(), loginRequest.getPassword()));
+		SecurityContextHolder.getContext().setAuthentication(authentication);
+		String token = jwtUtils.generateJwtToken(authentication);
+		UserDetailsImpl userDetails = (UserDetailsImpl) authentication.getPrincipal();
+		List<String> roles = userDetails.getAuthorities().stream().map(item -> item.getAuthority())
+				.collect(Collectors.toList());
 
-	LoginResponse loginResponse = new LoginResponse();
+		LoginResponse loginResponse = new LoginResponse();
 
-	loginResponse.setToken(token);
-	loginResponse.setRoles(roles);
+		loginResponse.setToken(token);
+		loginResponse.setRoles(roles);
 
-	return ResponseEntity.ok(loginResponse);
-}
-
-@PostMapping("/signup")
-public ResponseEntity<?> registraUser(@RequestBody RequestRegisterUser registraUser) {
-
-	if (userRepository.existsByEmail(registraUser.getEmail())) {
-		return new ResponseEntity<String>("email già in uso!", HttpStatus.BAD_REQUEST);
-	} else if (userRepository.existsByUserName(registraUser.getUserName())) {
-		return new ResponseEntity<String>("username già in uso!", HttpStatus.BAD_REQUEST);
+		return ResponseEntity.ok(loginResponse);
 	}
 
-	User userRegistrato = new User();
-	userRegistrato.setUserName(registraUser.getUserName());
-	userRegistrato.setEmail(registraUser.getEmail());
-	userRegistrato.setPassword(encoder.encode(registraUser.getPassword()));
-	if (registraUser.getRoles().isEmpty()) {
-		Optional<Role> ruolo = roleRepository.findByRoleName(Roles.ROLE_USER);
-		Set<Role> ruoli = new HashSet<>();
-		ruoli.add(ruolo.get());
-		userRegistrato.setRoles(ruoli);
-	} else {
-		Set<Role> ruoli = new HashSet<>();
-		for (String set : registraUser.getRoles()) {
-			switch (set.toUpperCase()) {
-			case "ADMIN":
-				Optional<Role> ruolo1 = roleRepository.findByRoleName(Roles.ROLE_ADMIN);
-				ruoli.add(ruolo1.get());
-				break;
-			case "USER":
-				Optional<Role> ruolo2 = roleRepository.findByRoleName(Roles.ROLE_USER);
-				ruoli.add(ruolo2.get());
-				break;
-			default:
-				throw new UserException("User non trovato!");
+	@PostMapping("/signup")
+	@Operation(summary = "Registra User", description = "")
+	public ResponseEntity<?> registraUser(@RequestBody RequestRegisterUser registraUser) {
+
+		if (userRepository.existsByEmail(registraUser.getEmail())) {
+			return new ResponseEntity<String>("email già in uso!", HttpStatus.BAD_REQUEST);
+		} else if (userRepository.existsByUserName(registraUser.getUserName())) {
+			return new ResponseEntity<String>("username già in uso!", HttpStatus.BAD_REQUEST);
+		}
+
+		User userRegistrato = new User();
+		userRegistrato.setUserName(registraUser.getUserName());
+		userRegistrato.setEmail(registraUser.getEmail());
+		userRegistrato.setPassword(encoder.encode(registraUser.getPassword()));
+		if (registraUser.getRoles().isEmpty()) {
+			Optional<Role> ruolo = roleRepository.findByRoleName(Roles.ROLE_USER);
+			Set<Role> ruoli = new HashSet<>();
+			ruoli.add(ruolo.get());
+			userRegistrato.setRoles(ruoli);
+		} else {
+			Set<Role> ruoli = new HashSet<>();
+			for (String set : registraUser.getRoles()) {
+				switch (set.toUpperCase()) {
+				case "ADMIN":
+					Optional<Role> ruolo1 = roleRepository.findByRoleName(Roles.ROLE_ADMIN);
+					ruoli.add(ruolo1.get());
+					break;
+				case "USER":
+					Optional<Role> ruolo2 = roleRepository.findByRoleName(Roles.ROLE_USER);
+					ruoli.add(ruolo2.get());
+					break;
+				default:
+					throw new UserException("User non trovato!");
+
+				}
 
 			}
+			userRegistrato.setRoles(ruoli);
 
 		}
-		userRegistrato.setRoles(ruoli);
-
-	}
-	userRepository.save(userRegistrato);
-	return new ResponseEntity<>("Utente inserito con successo: " + userRegistrato.toString(), HttpStatus.CREATED);
+		userRepository.save(userRegistrato);
+		return new ResponseEntity<>("Utente inserito con successo: " + userRegistrato.toString(), HttpStatus.CREATED);
 
 	}
 }
-
