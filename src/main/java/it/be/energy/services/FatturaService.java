@@ -1,7 +1,7 @@
 package it.be.energy.services;
 
 import java.math.BigDecimal;
-import java.util.Date;
+import java.time.LocalDate;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -70,7 +70,7 @@ public class FatturaService {
 		return fatturaRepository.findByStatoFattura(pageable, stato);
 	}
 
-	public Page<Fattura> findByData(Pageable pageable, Date data) {
+	public Page<Fattura> findByData(Pageable pageable, LocalDate data) {
 		return fatturaRepository.findByData(pageable, data);
 	}
 

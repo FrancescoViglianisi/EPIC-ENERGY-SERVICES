@@ -1,7 +1,7 @@
 package it.be.energy.controller;
 
 import java.math.BigDecimal;
-import java.util.Date;
+import java.time.LocalDate;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
@@ -21,16 +21,12 @@ import org.springframework.web.bind.annotation.RestController;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.parameters.RequestBody;
 import io.swagger.v3.oas.annotations.security.SecurityRequirement;
-import it.be.energy.model.Cliente;
 import it.be.energy.model.Fattura;
 import it.be.energy.model.StatoFattura;
-import it.be.energy.services.ClienteService;
 import it.be.energy.services.FatturaService;
-import lombok.extern.slf4j.Slf4j;
 
 @RestController
 @RequestMapping("/fattura")
-@Slf4j
 @SecurityRequirement(name = "bearerAuth")
 
 
@@ -109,7 +105,7 @@ public class FatturaController {
 	@PreAuthorize("hasAnyRole('ROLE_ADMIN', 'ROLE_USER')")
 	@GetMapping("/data")
 	@Operation(summary = "Cerca una fattura per la data", description = "")
-	public ResponseEntity<Page<Fattura>> findByData(Pageable pageable, Date data) {
+	public ResponseEntity<Page<Fattura>> findByData(Pageable pageable, LocalDate data) {
 		Page<Fattura> trovate = fatturaService.findByData(pageable, data); 
 		if(trovate.hasContent()) {
 			return new ResponseEntity<>(trovate , HttpStatus.ACCEPTED);
