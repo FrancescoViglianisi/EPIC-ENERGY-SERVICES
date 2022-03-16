@@ -38,3 +38,5 @@ public class Comune {
 		this.provincia = provincia;
 	}
 }
+
+//ciao
