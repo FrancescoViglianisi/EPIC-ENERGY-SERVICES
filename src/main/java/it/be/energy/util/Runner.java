@@ -35,7 +35,7 @@ public class Runner implements CommandLineRunner {
 	}
 
 	private void initProvincia() throws Exception {
-		try (CSVReader csvReader = new CSVReader(new FileReader("province-italiane_1.csv"));) {
+		try (CSVReader csvReader = new CSVReader(new FileReader("province-italiane_1.csv"));) {  //OPEN CSV
 			String[] values = null;
 			csvReader.readNext(); //
 			Optional<Provincia> pr;
