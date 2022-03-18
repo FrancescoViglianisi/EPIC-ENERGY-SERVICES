@@ -36,7 +36,7 @@ public class FatturaController {
 	FatturaService fatturaService;
 	
 	@PreAuthorize("hasRole('ROLE_ADMIN')")
-	@PostMapping
+	@PostMapping("/inserisci")
 	@Operation(summary = "Inserisci le fatture", description = "")
 	public String insert(@RequestBody Fattura fattura) {
 		fatturaService.insert(fattura);
