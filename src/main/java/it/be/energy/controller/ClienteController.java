@@ -75,14 +75,14 @@ public class ClienteController {
 
 
 	@PreAuthorize("hasRole('ROLE_ADMIN')")
-	@PutMapping("/aggiorna")
+	@PutMapping("/aggiorna/{id}")
 	@Operation(summary = "Aggiorna un cliente tramite il suo id", description = "")
 	public ResponseEntity<Cliente> aggiornaCliente(@RequestBody Cliente cliente, @PathVariable Long id)
 			throws ClienteException {
 		log.info("*** Inizio aggornamento cliente ***");
 		Cliente c = clienteService.update(cliente, id);
 		log.info("*** Fine aggiornamento cliente ***");
-		return new ResponseEntity<>(c, HttpStatus.ACCEPTED);
+		return new ResponseEntity<>(c, HttpStatus.CREATED);
 	}
 
 	@PreAuthorize("hasRole('ROLE_ADMIN')")
@@ -295,7 +295,7 @@ public class ClienteController {
 	}
 
 	@PreAuthorize("hasAnyRole('ROLE_ADMIN', 'ROLE_USER')")
-	@GetMapping("/trovaperinserimentocompresotra/{dataUltimoContattoMin}/{dataUltimoContattoMax}")
+	@GetMapping("/trovaperultimocontattocompresotra/{dataUltimoContattoMin}/{dataUltimoContattoMax}")
 	@Operation(summary = "Visualizza clienti per data ultimo contatto compreso fra", description = "")
 	public ResponseEntity<Page<Cliente>> trovaByDataUltimoContattoCompresaTra(Pageable pageable,
 			@PathVariable @DateTimeFormat(pattern = "yyyy-MM.dd") LocalDate dataUltimoContattoMin,
@@ -312,7 +312,7 @@ public class ClienteController {
 
 	@PreAuthorize("hasAnyRole('ROLE_ADMIN', 'ROLE_USER')")
 	@GetMapping("/trovaperragione/{ragioneSociale}")
-	@Operation(summary = "CVisualizza clienti per ragione sociale ", description = "")
+	@Operation(summary = "Visualizza clienti per ragione sociale ", description = "")
 	public ResponseEntity<Page<Cliente>> trovaByRagioneSocialeContaining(Pageable pageable,
 			@PathVariable String ragioneSociale) {
 		Page<Cliente> trovati = clienteService.findByRagioneSocialeContaining(pageable, ragioneSociale);
