@@ -79,9 +79,9 @@ public class FatturaController {
 	}
 	
 	@PreAuthorize("hasAnyRole('ROLE_ADMIN', 'ROLE_USER')")
-	@GetMapping("/find")
+	@GetMapping("/find/{nome}")
 	@Operation(summary = "Cerca una fattura per ragione sociale del cliente", description = "")
-	public ResponseEntity<Page<Fattura>> findByClienteRagioneSocialeContaining(Pageable pageable, String nome) {
+	public ResponseEntity<Page<Fattura>> findByClienteRagioneSocialeContaining(Pageable pageable, @PathVariable String nome) {
 		Page<Fattura> trovate = fatturaService.findByClienteRagioneSocialeContaining(pageable, nome); 
 		if(trovate.hasContent()) {
 			return new ResponseEntity<>(trovate , HttpStatus.ACCEPTED);
@@ -103,9 +103,9 @@ public class FatturaController {
 
 	}
 	@PreAuthorize("hasAnyRole('ROLE_ADMIN', 'ROLE_USER')")
-	@GetMapping("/data")
+	@GetMapping("/data/{data}")
 	@Operation(summary = "Cerca una fattura per la data", description = "")
-	public ResponseEntity<Page<Fattura>> findByData(Pageable pageable, LocalDate data) {
+	public ResponseEntity<Page<Fattura>> findByData(Pageable pageable, @PathVariable LocalDate data) {
 		Page<Fattura> trovate = fatturaService.findByData(pageable, data); 
 		if(trovate.hasContent()) {
 			return new ResponseEntity<>(trovate , HttpStatus.ACCEPTED);

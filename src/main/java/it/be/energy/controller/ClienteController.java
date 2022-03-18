@@ -96,11 +96,11 @@ public class ClienteController {
 	}
 
 	@PreAuthorize("hasAnyRole('ROLE_ADMIN', 'ROLE_USER')")
-	@GetMapping("/trovaperragionesociale")
+	@GetMapping("/trovaperragionesociale/{nome}")
 	@Operation(summary = "Visualizza clienti per nome", description = "")
-	public ResponseEntity<Page<Cliente>> ordinaByNome(Pageable pageable) {
+	public ResponseEntity<Page<Cliente>> ordinaByNome(Pageable pageable ,@PathVariable String nome) {
 		log.info("*** Inizio ricerca clienti per nome ***");
-		Page<Cliente> trovaTutti = clienteService.findAllByOrderByRagioneSocialeAsc(pageable);
+		Page<Cliente> trovaTutti = clienteService.findByRagioneSocialeContaining(pageable, nome);
 		if (trovaTutti.hasContent()) {
 			log.info("*** Cliente trovato! ***");
 			return new ResponseEntity<>(trovaTutti, HttpStatus.OK);
@@ -311,7 +311,7 @@ public class ClienteController {
 	}
 
 	@PreAuthorize("hasAnyRole('ROLE_ADMIN', 'ROLE_USER')")
-	@GetMapping("/trovapernomelike/{ragioneSociale}")
+	@GetMapping("/trovaperragione/{ragioneSociale}")
 	@Operation(summary = "CVisualizza clienti per ragione sociale ", description = "")
 	public ResponseEntity<Page<Cliente>> trovaByRagioneSocialeContaining(Pageable pageable,
 			@PathVariable String ragioneSociale) {
