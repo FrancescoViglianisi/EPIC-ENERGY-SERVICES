@@ -28,7 +28,7 @@ public class ClienteService {
 	}
 
 	public Cliente update(Cliente cliente ,Long id) {
-		Optional<Cliente> update = clienteRepository.findById(cliente.getId());
+		Optional<Cliente> update = clienteRepository.findById(id);
 		if (update.isPresent()) {
 			Cliente clienteUpdate = update.get();
 			clienteUpdate.setCognomeContatto(cliente.getCognomeContatto());
@@ -51,7 +51,7 @@ public class ClienteService {
 			clienteRepository.save(clienteUpdate);
 			return clienteUpdate;
 		} else {
-			throw new ClienteException("Cliente non modificato");
+			throw new ClienteException("Cliente non trovato");
 		}
 
 	}
