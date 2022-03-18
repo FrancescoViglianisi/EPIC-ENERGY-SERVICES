@@ -70,10 +70,10 @@ public class FatturaController {
 		return "Fattura aggiornata correttamente";
 	}
 	
-	@PreAuthorize("hasAnyRole('ROLE_ADMIN', 'ROLE_USER')")
-	@DeleteMapping("/delete")
+	@PreAuthorize("hasAnyRole('ROLE_ADMIN')")
+	@DeleteMapping("/delete/{id}")
 	@Operation(summary = "Elimina una fattura", description = "")
-	public String delete(@RequestParam Long id) {
+	public String delete(@PathVariable Long id) {
 		fatturaService.delete(id);
 		return "Fattura eliminata correttamente";
 	}

@@ -8,7 +8,6 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import it.be.energy.model.Fattura;
-import it.be.energy.model.StatoFattura;
 
 public interface FatturaRepository extends JpaRepository<Fattura, Long> {
 	
@@ -16,7 +15,7 @@ public interface FatturaRepository extends JpaRepository<Fattura, Long> {
 	
 	public Page<Fattura> findByClienteRagioneSocialeContaining(Pageable pageable , String nome);
 	
-	public Page<Fattura> findByStatoFattura(Pageable pageable , StatoFattura statoFattura);
+	public Page<Fattura> findByStatoFatturaId(Pageable pageable , Long id);
 	
 	public Page <Fattura> findByData (Pageable pageable , LocalDate data);
 	

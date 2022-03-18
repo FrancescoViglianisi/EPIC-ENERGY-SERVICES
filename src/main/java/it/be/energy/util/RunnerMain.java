@@ -135,7 +135,7 @@ public class RunnerMain implements CommandLineRunner {
 	private void initFatture() throws Exception {
 		Fattura f1 = new Fattura();
 		StatoFattura sf = new StatoFattura();
-		sf.setNome("pagato");
+		sf.setNome("pagato1");
 		f1.setAnno(2021);
 		f1.setData(LocalDate.parse("2021-03-05"));
 		f1.setImporto(new BigDecimal("2500"));

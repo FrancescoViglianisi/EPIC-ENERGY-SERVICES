@@ -144,8 +144,26 @@ public class ClienteTest {
 	}
 	@Test
 	@WithMockUser
-	final void findAllByOrderByFatturatoAnnuale() throws Exception {
-		this.mockMvc.perform(get("http://localhost:8080/cliente/trovaperfatturato")).andDo(print()).andExpect(status().isOk());	
+	final void findByStatoId() throws Exception {
+		this.mockMvc.perform(get("http://localhost:8080/cliente//trovaperfatturatocompresotra/10.000/950.000")).andDo(print()).andExpect(status().isOk());	
+	}
+	
+	@Test
+	@WithMockUser
+	final void ordinaBySedeLegaleComuneProvincia() throws Exception {
+		this.mockMvc.perform(get("http://localhost:8080/cliente/ordinapersedelegale")).andDo(print()).andExpect(status().isOk());	
+	}
+	
+	@Test
+	@WithMockUser
+	final void trovaPerFatturatoAnnualeMinoreUguale() throws Exception {
+		this.mockMvc.perform(get("http://localhost:8080/cliente//trovaperfatturatominoredi/960.000")).andDo(print()).andExpect(status().isOk());	
+	}
+	
+	@Test
+	@WithMockUser
+	final void trovaPerFatturatoAnnualeMaggioreUguale() throws Exception {
+		this.mockMvc.perform(get("http://localhost:8080/cliente//trovaperfatturatomaggioredi/100.000")).andDo(print()).andExpect(status().isOk());	
 	}
 	
 
